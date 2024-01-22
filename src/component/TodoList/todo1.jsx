@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import AddTodo from '../AddTodo/AddTodo';
 import Todo from '../Todo/Todo';
-export default function TODOLIST(){
+export default function TODOLIST({filter}){
 
   const [todos, setTodos] = useState([{
     id : '123', 
@@ -36,10 +36,12 @@ export default function TODOLIST(){
     setTodos(todos.filter((item)=>item.id!==id));
   }
 
+  const filtered = getFilteredItems(todos, filter);
+
   return (
     <section>
       <ul>
-        {todos.map(item => (
+        {filtered.map(item => (
           <Todo
             key={item.id} 
             todo={item} //item 자체를 전달한다
@@ -56,3 +58,8 @@ export default function TODOLIST(){
   )
 }
 
+
+function getFilteredItems(todos, filter){
+  if (filter==='all') return todos;
+  return todos.filter((todo)=>todo.status === filter); //status가 'completed' || 'active'
+}

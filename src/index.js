@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import TODOLIST from './component/TodoList/todo1';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <TODOLIST />
+  <React.StrictMode id="root">
+    <App/>
   </React.StrictMode>
 );
 
