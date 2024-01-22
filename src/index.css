@@ -3,7 +3,9 @@
   --color-bg : #fdfffd;
   --color-grey : #d1d1d1;
   --color-text : #22243b;
-  --color-accent : #f16e03;
+  --color-accent : #f16e03; 
+  --color-white : white;
+  --color-scrollbar : #f16e03;
 } 
 
 
@@ -14,7 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  accent-color: var(--color-accent);
   width : 100vw;
   height : 100vh;
   display : flex;
@@ -28,6 +30,7 @@ body {
     rgba(147,174,204,1) 44%, 
     rgba(84,63,143,1) 70%
   );
+  font-size : 1.2rem;
 
 }
 
@@ -36,11 +39,14 @@ body {
   height : 60%;
   max-width : 500px;
   background-color : var(--color-bg-dark);
+  overflow: hidden;
+  border-radius : 1rem;
   display : flex;
   flex-direction : column;
   box-shadow: 5px 3px 6px 1px rgba(63,63,63,0.67);
--webkit-box-shadow: 5px 3px 6px 1px rgba(63,63,63,0.67);
--moz-box-shadow: 5px 3px 6px 1px rgba(63,63,63,0.67);
+  -webkit-box-shadow: 5px 3px 6px 1px rgba(63,63,63,0.67);
+  -moz-box-shadow: 5px 3px 6px 1px rgba(63,63,63,0.67);
+
 }
 
 code {
@@ -48,7 +54,27 @@ code {
     monospace;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+
 ul {
   list-style: none;
   padding-left : 0;
+}
+
+button {
+  outline : none;
+  border : none;
+}
+
+::-webkit-scrollbar-track	{
+  background-color: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb	{
+  background-color: var(--color-scrollbar);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color : var(--color-accent);
 }

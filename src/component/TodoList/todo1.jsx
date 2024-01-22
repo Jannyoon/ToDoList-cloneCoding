@@ -1,6 +1,9 @@
 import {useState} from 'react';
 import AddTodo from '../AddTodo/AddTodo';
 import Todo from '../Todo/Todo';
+import styles from './TodoList.module.css'
+
+
 export default function TODOLIST({filter}){
 
   const [todos, setTodos] = useState([{
@@ -39,10 +42,10 @@ export default function TODOLIST({filter}){
   const filtered = getFilteredItems(todos, filter);
 
   return (
-    <section>
-      <ul>
+    <section className={styles.container}>
+      <ul className={styles.list}>
         {filtered.map(item => (
-          <Todo
+          <Todo    //Todo 목록이 들어가는 컴포넌트
             key={item.id} 
             todo={item} //item 자체를 전달한다
 
@@ -51,7 +54,7 @@ export default function TODOLIST({filter}){
           />
         ))}
       </ul>      
-      <AddTodo  onAdd={handleAdd}/>
+      <AddTodo  onAdd={handleAdd}/> 
     </section>
     
 
