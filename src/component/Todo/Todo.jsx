@@ -5,15 +5,15 @@ export default function Todo({todo, onUpdate, onDelete}){
   const {text, status} = todo;
 
   return (
-    <li className={styles.todo} id={todo.id}>
+    <li className={styles.todo}>
       <input 
         type="checkbox" 
-        id='checkbox'
+        id={todo.id}
         className={styles.checkbox} 
         checked = {status === 'completed'}
         onClick={()=>onUpdate(todo.id)}
       />
-      <label htmlFor="checkbox" className={styles.text}>
+      <label htmlFor={todo.id} className={styles.text}>
         {text}
       </label>
       <span className={styles.icon}>

@@ -15,10 +15,7 @@ export function DarkModeProvider({children}){
     window.matchMedia('(prefers-color-scheme: dark)').matches);
   
     setDarkMode(isDark); //내부 상태 업데이트
-    updateDarkMode(isDark);
-  
-    
-    
+    updateDarkMode(isDark);    
   }, [darkMode])
 
 

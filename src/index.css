@@ -8,6 +8,12 @@
   --color-scrollbar : #f16e03;
 } 
 
+html.dark {
+  --color-bg-dark: #1a1c35;
+  --color-bg : #22243b;
+  --color-grey : #4e4e4e;
+  --color-text : #fdfffd;
+}
 
 body {
   margin: 0;
